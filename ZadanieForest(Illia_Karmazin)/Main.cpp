@@ -6,20 +6,28 @@ using namespace std;
 
 int main()
 {
-	int menu_num;
+	int Height , menu_num;
+	string Color;
+	char Symbol ;
 	do
 	{
 		cout << "Menu :" << endl << "1. Add tree to forest" << endl << "Enter number : ";
 		cin >> menu_num;
-		switch (menu_num)
+		if (menu_num == 1)
 		{
-		case 1 :
-
-		default:
-			cout << "Wrong number";
+			cout << "Enter color : ";
+			cin >> Color;
+			cout << "Enter symbol : ";
+			cin >> Symbol;
+			cout << "Enter height : ";
+			cin >> Height;
+			Tree obj(Color, Symbol, Height);
+		}
+		else
+		{
+			cout << "Wrong number" << endl;
 			break;
 		}
-
 	}while(true);
     return 0;
 }

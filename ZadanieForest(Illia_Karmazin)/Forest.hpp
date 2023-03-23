@@ -1,0 +1,5 @@
+class Forest
+{
+public:
+private:
+};
