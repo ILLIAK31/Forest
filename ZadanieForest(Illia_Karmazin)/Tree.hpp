@@ -7,4 +7,5 @@ private:
 	int** tab;
 public:
 	Tree(string Color , char Symbol , int Height);
+	~Tree();
 };
