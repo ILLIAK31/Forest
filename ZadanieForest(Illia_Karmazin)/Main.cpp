@@ -2,11 +2,12 @@
 
 using namespace std;
 
+#include "Forest.hpp"
 #include "Tree.hpp"
 
 int main()
 {
-	int Height , menu_num;
+	int Height , menu_num , X , Y;
 	string Color;
 	char Symbol ;
 	do
@@ -21,7 +22,12 @@ int main()
 			cin >> Symbol;
 			cout << "Enter height : ";
 			cin >> Height;
-			Tree obj(Color, Symbol, Height);
+			cout << "Enter X : ";
+			cin >> X;
+			cout << "Enter Y : ";
+			cin >> Y;
+			//Tree obj(Color, Symbol, Height);
+			//code here
 		}
 		else
 		{

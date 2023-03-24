@@ -5,11 +5,13 @@ using namespace std;
 #include "Tree.hpp"
 #include "Forest.hpp"
 
-Tree::Tree(string Color , char Symbol, int Height)
+Tree::Tree(string Color , char Symbol, int Height, int X , int Y)
 {
 	color = Color;
 	symbol = Symbol;
 	height = Height;
+	x = X;
+	y = Y;
 	tab = new int* [height];
 	for (int j = 0; j < height; j++) 
 	{
