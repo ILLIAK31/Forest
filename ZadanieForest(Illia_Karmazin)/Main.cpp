@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -7,9 +8,20 @@ using namespace std;
 
 int main()
 {
-	int Height , menu_num , X , Y;
+	int Height, menu_num, X, Y , size_forest;
 	string Color;
 	char Symbol ;
+	cout << "To create forest give size of it : ";
+	cin >> size_forest;
+	vector<vector<int> > forest(size_forest, vector<int>(2 * size_forest));
+	for (int i = 0; i < size_forest; ++i)
+	{
+		for (int j = 0; j < 2 * size_forest; ++j)
+		{
+			forest[i][j] = 0;
+		}
+	}
+	Forest obj2(size_forest,forest);
 	do
 	{
 		cout << "Menu :" << endl << "1. Add tree to forest" << endl << "Enter number : ";
@@ -26,8 +38,8 @@ int main()
 			cin >> X;
 			cout << "Enter Y : ";
 			cin >> Y;
-			//Tree obj(Color, Symbol, Height);
-			//code here
+			Tree* drzewo = new Tree(Color, Symbol, Height, X, Y);
+			obj2.AddTree(drzewo);
 		}
 		else
 		{

@@ -1,11 +1,11 @@
-#include <iostream>
 #include <vector>
-using namespace std;
-
 class Forest
 {
 private:
+	friend class Tree;
 	vector<Tree*> wektor;
+	int size_forest;
 public:
-	void AddTree(Tree* Obj);
+	Forest(int Size , vector<vector<int>>Forest);
+	void AddTree(Tree * obj3);
 };
