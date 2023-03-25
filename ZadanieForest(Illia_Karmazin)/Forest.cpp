@@ -51,14 +51,12 @@ void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
 
 void Forest::PrintForest(vector<vector<int>> &Forest)
 {
-	
-	/*
 	int index;
 	for (int i = 0; i < size_forest; ++i)
 	{
 		for (int j = 0; j < 2*size_forest; ++j)
 		{
-			if (Forest[i][j] == '0')
+			if (Forest[i][j] == 0)
 				cout << ' ';
 			else
 			{
@@ -68,5 +66,4 @@ void Forest::PrintForest(vector<vector<int>> &Forest)
 		}
 		cout << endl;
 	}
-	*/
 }

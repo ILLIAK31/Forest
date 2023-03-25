@@ -46,6 +46,7 @@ int main()
 			Tree* drzewo = new Tree(Color, Symbol, Height, X, Y);
 			obj2.AddTree(drzewo,*&forest);
 			//print test
+			/*
 			for (int i = 0; i < size_forest; ++i)
 			{
 				for (int j = 0; j < 2 * size_forest; ++j)
@@ -54,6 +55,7 @@ int main()
 				}
 				cout << endl;
 			}
+			*/
 		}
 		else if (menu_num == 2)
 		{
