@@ -9,16 +9,17 @@ using namespace std;
 Forest::Forest(int Size , vector<vector<int>>Forest)
 {
 	size_forest = Size;
-	//print test
-	for (int i = 0; i < Size; ++i)
+}
+
+Forest::~Forest()
+{
+	for (auto obj : wektor)
 	{
-		for (int j = 0; j < 2 * Size; ++j)
-		{
-			cout << Forest[i][j] << ' ';
-		}
-		cout << endl;
+		delete obj;
+		obj = NULL;
 	}
-	//
+	wektor.clear();
+	cout << "Forest wad deleted";
 }
 
 void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
@@ -39,18 +40,15 @@ void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
 	{
 		for (int x2 = 0; x2 < ((2 * (obj3->height)) - 1); ++x2 , ++x)
 		{
+			if (((obj3->tab[y2][x2]) == 0) && (Forest[y][x] != '0'))
+				continue;
 			Forest[y][x] = obj3->tab[y2][x2];
 		}
 		x = (obj3->x) - 1;
 	}
-	// print test
-	/*for (int y2 = 0; y2 < size_forest; ++y2)
-	{
-		for (int x2 = 0; x2 < (2 * size_forest); ++x2)
-		{
-			cout << Forest[y2][x2] << ' ';
-		}
-		cout << endl;
-	}
-	*/
+}
+
+void Forest::PrintForest()
+{
+
 }

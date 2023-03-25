@@ -30,8 +30,8 @@ Tree::Tree(string Color , char Symbol, int Height, int X , int Y)
 Tree::~Tree()
 {
 	int j;
-	cout << "delete tree" << endl;
 	for (j = 0; j < height; j++)
 		delete tab[j];
 	delete tab;
+	cout << "Trees was deleted" << endl;
 }

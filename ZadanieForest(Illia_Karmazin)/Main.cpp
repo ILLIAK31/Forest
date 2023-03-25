@@ -24,11 +24,11 @@ int main()
 	Forest obj2(size_forest,forest);
 	do
 	{
-		cout << "Menu :" << endl << "1. Add tree to forest" << endl << "Enter number : ";
+		cout << endl << "Menu :" << endl << "1. Add tree to forest" << endl << "2. Print forest" << endl << "3. Exit" << endl << "Enter number : ";
 		cin >> menu_num;
 		if (menu_num == 1)
 		{
-			cout << "Enter color : ";
+			cout << endl << "Enter color : ";
 			cin >> Color;
 			cout << "Enter symbol : ";
 			cin >> Symbol;
@@ -52,11 +52,20 @@ int main()
 			}
 			*/
 		}
+		else if (menu_num == 2)
+		{
+			obj2.PrintForest();
+		}
+		else if (menu_num == 3)
+		{
+			break;
+		}
 		else
 		{
 			cout << "Wrong number" << endl;
 			break;
 		}
 	}while(true);
+	forest.clear();
     return 0;
 }
