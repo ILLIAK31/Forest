@@ -10,7 +10,18 @@ int size_of_forest = 0;
 Tree::Tree(string Color , char Symbol, int Height, int X , int Y)
 {
 	++size_of_forest;
-	color = Color;
+	if (Color == "Red")
+		color = "31m";
+	else if (Color == "Blue")
+		color = "34m";
+	else if (Color == "Green")
+		color = "32m";
+	else if (Color == "Yellow")
+		color = "33m";
+	else if (Color == "Purple")
+		color = "35m";
+	else if (Color == "White")
+		color = "37m";
 	symbol = Symbol;
 	height = Height;
 	x = X;

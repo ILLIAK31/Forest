@@ -30,6 +30,11 @@ int main()
 		{
 			cout << endl << "Enter color : ";
 			cin >> Color;
+			if ((Color != "Red") && (Color != "Blue") && (Color != "Green") && (Color != "Yellow") && (Color != "Purple") && (Color != "White"))
+			{
+				cout << "Wrong color";
+				break;
+			}
 			cout << "Enter symbol : ";
 			cin >> Symbol;
 			cout << "Enter height : ";
@@ -41,7 +46,6 @@ int main()
 			Tree* drzewo = new Tree(Color, Symbol, Height, X, Y);
 			obj2.AddTree(drzewo,*&forest);
 			//print test
-			/*
 			for (int i = 0; i < size_forest; ++i)
 			{
 				for (int j = 0; j < 2 * size_forest; ++j)
@@ -50,11 +54,10 @@ int main()
 				}
 				cout << endl;
 			}
-			*/
 		}
 		else if (menu_num == 2)
 		{
-			obj2.PrintForest();
+			obj2.PrintForest(forest);
 		}
 		else if (menu_num == 3)
 		{

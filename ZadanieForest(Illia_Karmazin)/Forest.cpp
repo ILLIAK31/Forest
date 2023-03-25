@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <windows.h>  
 
 using namespace std;
 
 #include "Forest.hpp"
 #include "Tree.hpp"
 
-Forest::Forest(int Size , vector<vector<int>>Forest)
+Forest::Forest(int Size , vector<vector<int>>&Forest)
 {
 	size_forest = Size;
 }
@@ -48,7 +49,24 @@ void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
 	}
 }
 
-void Forest::PrintForest()
+void Forest::PrintForest(vector<vector<int>> &Forest)
 {
-
+	
+	/*
+	int index;
+	for (int i = 0; i < size_forest; ++i)
+	{
+		for (int j = 0; j < 2*size_forest; ++j)
+		{
+			if (Forest[i][j] == '0')
+				cout << ' ';
+			else
+			{
+				index = (int)Forest[i][j];
+				cout << "\033[1;" << wektor[index-1]->color << wektor[index-1]->symbol << "\033[0m" ;
+			}
+		}
+		cout << endl;
+	}
+	*/
 }
