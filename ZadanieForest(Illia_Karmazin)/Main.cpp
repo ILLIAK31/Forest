@@ -39,7 +39,18 @@ int main()
 			cout << "Enter Y : ";
 			cin >> Y;
 			Tree* drzewo = new Tree(Color, Symbol, Height, X, Y);
-			obj2.AddTree(drzewo);
+			obj2.AddTree(drzewo,*&forest);
+			//print test
+			/*
+			for (int i = 0; i < size_forest; ++i)
+			{
+				for (int j = 0; j < 2 * size_forest; ++j)
+				{
+					cout << forest[i][j] << ' ';
+				}
+				cout << endl;
+			}
+			*/
 		}
 		else
 		{

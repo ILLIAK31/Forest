@@ -5,8 +5,11 @@ using namespace std;
 #include "Tree.hpp"
 #include "Forest.hpp"
 
+int size_of_forest = 0;
+
 Tree::Tree(string Color , char Symbol, int Height, int X , int Y)
 {
+	++size_of_forest;
 	color = Color;
 	symbol = Symbol;
 	height = Height;
@@ -21,7 +24,7 @@ Tree::Tree(string Color , char Symbol, int Height, int X , int Y)
 	}
 	for (int j = 0; j < height; j++)
 		for (int i = height - j - 1; i < height + j; i++)
-			tab[j][i] = 1;
+			tab[j][i] = size_of_forest;
 }
 
 Tree::~Tree()

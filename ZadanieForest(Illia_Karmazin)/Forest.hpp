@@ -7,5 +7,5 @@ private:
 	int size_forest;
 public:
 	Forest(int Size , vector<vector<int>>Forest);
-	void AddTree(Tree * obj3);
+	void AddTree(Tree * obj3 , vector<vector<int>>&Forest);
 };
