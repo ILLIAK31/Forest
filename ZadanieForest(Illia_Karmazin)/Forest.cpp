@@ -20,21 +20,11 @@ Forest::~Forest()
 		obj = NULL;
 	}
 	wektor.clear();
-	cout << "Forest wad deleted";
+	cout << "Forest was deleted" << endl;
 }
 
 void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
 {
-	if (((obj3->height) + ((obj3->y)-1)) > size_forest)
-	{
-		cout << "Tree too big for this forest" << size_forest << endl;
-		return;
-	}
-	if ((((obj3->x)-1) + ((2 * (obj3->height)) - 1)) > (2*size_forest))
-	{
-		cout << "Tree too big for this forest" << endl;
-		return;
-	}
 	wektor.push_back(obj3);
 	int x = (obj3->x)-1, y = (obj3->y)-1;
 	for (int y2 = 0; y2 < (obj3->height); ++y2 , ++y)
@@ -42,10 +32,18 @@ void Forest::AddTree(Tree* obj3 , vector<vector<int>>&Forest)
 		for (int x2 = 0; x2 < ((2 * (obj3->height)) - 1); ++x2 , ++x)
 		{
 			if (((obj3->tab[y2][x2]) == 0) && (Forest[y][x] != '0'))
+			{
+				if ((x + 1) >= (2 * size_forest))
+					break;
 				continue;
+			}
 			Forest[y][x] = obj3->tab[y2][x2];
+			if ((x + 1) >= (2 * size_forest))
+				break;
 		}
 		x = (obj3->x) - 1;
+		if ((y + 1) >= size_forest)
+			break;
 	}
 }
 

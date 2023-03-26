@@ -11,8 +11,9 @@ int main()
 	int Height, menu_num, X, Y , size_forest;
 	string Color;
 	char Symbol ;
-	cout << "To create forest give size of it : ";
+	cout << "To create forest give size of it (Size must be bigger than 0): ";
 	cin >> size_forest;
+	cout << "Size of forest gona be " << size_forest << "x" << 2 * size_forest << endl;
 	vector<vector<int> > forest(size_forest, vector<int>(2 * size_forest));
 	for (int i = 0; i < size_forest; ++i)
 	{
@@ -28,34 +29,26 @@ int main()
 		cin >> menu_num;
 		if (menu_num == 1)
 		{
-			cout << endl << "Enter color : ";
+			cout << endl << "Enter color (Red , Blue , Green , Yellow , Purple , White) : ";
 			cin >> Color;
 			if ((Color != "Red") && (Color != "Blue") && (Color != "Green") && (Color != "Yellow") && (Color != "Purple") && (Color != "White"))
 			{
-				cout << "Wrong color";
+				cout << endl << "Wrong color" << endl;
 				break;
 			}
 			cout << "Enter symbol : ";
 			cin >> Symbol;
 			cout << "Enter height : ";
 			cin >> Height;
-			cout << "Enter X : ";
+			cout << "Enter X ( From " << "1 to " << 2*size_forest << " ) : ";
 			cin >> X;
-			cout << "Enter Y : ";
+			if (size_forest == 1)
+				cout << "Enter Y (Only 1 can be Y) : ";
+			else
+				cout << "Enter Y ( From " << "1 to " << size_forest << " ) : ";
 			cin >> Y;
 			Tree* drzewo = new Tree(Color, Symbol, Height, X, Y);
 			obj2.AddTree(drzewo,*&forest);
-			//print test
-			/*
-			for (int i = 0; i < size_forest; ++i)
-			{
-				for (int j = 0; j < 2 * size_forest; ++j)
-				{
-					cout << forest[i][j] << ' ';
-				}
-				cout << endl;
-			}
-			*/
 		}
 		else if (menu_num == 2)
 		{
@@ -72,5 +65,6 @@ int main()
 		}
 	}while(true);
 	forest.clear();
+	cout << endl << "Trees was deleted" << endl;
     return 0;
 }

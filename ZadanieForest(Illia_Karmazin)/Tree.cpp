@@ -44,5 +44,4 @@ Tree::~Tree()
 	for (j = 0; j < height; j++)
 		delete tab[j];
 	delete tab;
-	cout << "Trees was deleted" << endl;
 }
