@@ -1,6 +1,7 @@
 class Tree
 {
 private:
+	friend class Forest;
 	string color;
 	char symbol;
 	int height , x , y;
